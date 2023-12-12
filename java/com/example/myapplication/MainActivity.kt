@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 
             if (enteredUsername == correctUsername && enteredPassword == correctPassword) {
                 showToast("Credenziali Corrette!")
-                // Puoi aggiungere qui l'apertura di un'altra parte dell'app o eseguire altre operazioni
+                val intent = Intent(this, SelectionMenu::class.java)
+                startActivity(intent)
             } else {
                 showToast("Credenziali non valide. Riprova!")
             }
