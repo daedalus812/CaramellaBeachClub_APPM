@@ -28,6 +28,9 @@
         </activity>
 
         <activity android:name=".SelectionMenu" />
+        <activity android:name=".Menu" />
+        <activity android:name=".Ombrelloni" />
+        <activity android:name=".Negozio" />
     </application>
 
 </manifest>
