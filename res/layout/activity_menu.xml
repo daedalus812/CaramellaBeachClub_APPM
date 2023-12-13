@@ -7,35 +7,50 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/menuButton"
-        android:layout_width="111dp"
-        android:layout_height="111dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/umbrellaButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/taccuino" />
-
-    <ImageButton
         android:id="@+id/umbrellaButton"
         android:layout_width="111dp"
         android:layout_height="111dp"
+        android:contentDescription="@string/umbrella_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/shopButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menuButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002"
+        app:srcCompat="@drawable/ombrellone" />
+
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="111dp"
+        android:layout_height="111dp"
+        android:contentDescription="@string/menu_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/umbrellaButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482"
+        app:srcCompat="@drawable/taccuino" />
+
+    <ImageButton
+        android:id="@+id/shopButton"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:contentDescription="@string/shop_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/menuButton"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/umbrellaButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/ombrellone" />
+        app:layout_constraintVertical_bias="0.483"
+        app:srcCompat="@drawable/carrello" />
 
     <TextView
         android:id="@+id/menuText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Menu"
+        android:text="@string/menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/umbrellaText"
         app:layout_constraintHorizontal_bias="0.402"
@@ -43,23 +58,12 @@
         app:layout_constraintTop_toBottomOf="@+id/menuButton"
         app:layout_constraintVertical_bias="0.007" />
 
-    <ImageButton
-        android:id="@+id/shopButton"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/umbrellaButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/carrello" />
-
     <TextView
         android:id="@+id/umbrellaText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Ombrelli"
+        android:text="@string/umbrella"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Shop"
+        android:text="@string/shop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.605"
@@ -88,6 +92,7 @@
         android:layout_marginEnd="337dp"
         android:layout_marginBottom="240dp"
         android:backgroundTint="#FDF9FC"
+        android:contentDescription="@string/logout_button"
         app:layout_constraintBottom_toTopOf="@+id/menuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
