@@ -4,14 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Ombrelloni">
+
+    <Button
+        android:id="@+id/umbrella1Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella4"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella2Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella1"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella5"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella3Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella1Button"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella2"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella3Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella2Button"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella3"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella4Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella7"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella5Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella4"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella5Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella8"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella6Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella4Button"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella5"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella6Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella5Button"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella6"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella7Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella8Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella7"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella8Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella9Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella7Button"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella8"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/umbrella9Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="processUmbrella"
+        android:text="@string/taken"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella8Button"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella9"
+        app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/umbrella1"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella1Button"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,206 +136,99 @@
         app:srcCompat="@drawable/ombrelli" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/umbrella2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella2Button"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/umbrella1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/ombrelli" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.5" />
-
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/umbrella3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella3Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/umbrella2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/ombrelli" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.5" />
-
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/umbrella4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella4Button"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella1Button"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/ombrelli" />
 
-    <Button
-        android:id="@+id/button5"
+    <ImageView
+        android:id="@+id/umbrella5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella5Button"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella4"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella2Button"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ombrelli" />
+
+    <ImageView
+        android:id="@+id/umbrella6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella6Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/umbrella5"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella3Button"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ombrelli" />
+
+    <ImageView
+        android:id="@+id/umbrella7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella7Button"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella4Button"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/ombrelli" />
 
-    <Button
-        android:id="@+id/button6"
+    <ImageView
+        android:id="@+id/umbrella8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella8Button"
+        app:layout_constraintEnd_toStartOf="@+id/umbrella9"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintStart_toEndOf="@+id/umbrella7"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella5Button"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ombrelli" />
 
-    <Button
-        android:id="@+id/button7"
+    <ImageView
+        android:id="@+id/umbrella9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toTopOf="@+id/umbrella9Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/umbrella8"
+        app:layout_constraintTop_toBottomOf="@+id/umbrella6Button"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/ombrelli" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toStartOf="@+id/imageView10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/ombrelli" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
-        app:layout_constraintEnd_toStartOf="@+id/imageView11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/ombrelli" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/ombrelli" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Occupa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

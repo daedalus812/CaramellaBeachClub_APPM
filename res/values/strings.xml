@@ -17,5 +17,6 @@
     <string name="shop_button">Shop button</string>
     <string name="umbrella_button">Umbrella button</string>
     <string name="menu_button">Menu button</string>
+    <string name="taken">Occupa</string>
 
 </resources>
