@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class Ombrelloni : AppCompatActivity() {
     private val numOmbrelli = 9
     private val booleanArray = BooleanArray(numOmbrelli)
+    private val testo = arrayOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +27,21 @@ class Ombrelloni : AppCompatActivity() {
             val umbrella = findViewById<Button>(buttonId)
             val buttonIdName = resources.getResourceEntryName(buttonId)
             val i = Character.getNumericValue(buttonIdName[8].code) - 1
+
+            val idText = resources.getIdentifier("textView"+(i+1), "id", packageName)
+            val textView = findViewById<TextView>(idText)
+
             booleanArray[i] = !booleanArray[i]
             if (booleanArray[i]) {
                 umbrella.text = "Libera"
 
                 //alertDialog
-
-                val idText = resources.getIdentifier("TextView" + i, "id", packageName)
-                val textView = findViewById<Button>(idText)
                 textView.visibility = View.VISIBLE
             }
-            else
+            else {
                 umbrella.text = "Occupa"
-
+                textView.visibility = View.INVISIBLE
+            }
         }
     }
 
