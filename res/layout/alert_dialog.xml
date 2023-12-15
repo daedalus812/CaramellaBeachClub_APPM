@@ -1,25 +1,27 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- res/layout/custom_dialog_layout.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextNome"
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome"/>
 
     <EditText
-        android:id="@+id/editTextCognome"
+        android:id="@+id/editTextSurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Cognome"/>
 
-    <EditText
-        android:id="@+id/editTextData"
+    <Spinner
+        android:id="@+id/spinnerSubscription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Data"/>
+        android:entries="@array/subscription_types"/>
 
 </LinearLayout>

@@ -2,9 +2,12 @@ package com.example.myapplication
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -21,6 +24,7 @@ class Ombrelloni : AppCompatActivity() {
         load()
     }
 
+
     fun processUmbrella(view: View) {
         if (view is Button) {
             val buttonId = view.id
@@ -31,17 +35,47 @@ class Ombrelloni : AppCompatActivity() {
             val idText = resources.getIdentifier("textView"+(i+1), "id", packageName)
             val textView = findViewById<TextView>(idText)
 
-            booleanArray[i] = !booleanArray[i]
-            if (booleanArray[i]) {
-                umbrella.text = "Libera"
+            val inflater = LayoutInflater.from(this)
+            val dialogView = inflater.inflate(R.layout.alert_dialog, null)
 
-                //alertDialog
-                textView.visibility = View.VISIBLE
+            val editTextName = dialogView.findViewById<EditText>(R.id.editTextName)
+            val editTextSurname = dialogView.findViewById<EditText>(R.id.editTextSurname)
+            val spinnerSubscription = dialogView.findViewById<Spinner>(R.id.spinnerSubscription)
+
+            ArrayAdapter.createFromResource(
+                this,
+                R.array.subscription_types,
+                android.R.layout.simple_spinner_item
+            ).also { adapter ->
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinnerSubscription.adapter = adapter
             }
-            else {
-                umbrella.text = "Occupa"
-                textView.visibility = View.INVISIBLE
-            }
+
+            AlertDialog.Builder(this)
+                .setView(dialogView)
+                .setTitle("Inserisci i dettagli")
+                .setPositiveButton("OK") { dialog, which ->
+                    val name = editTextName.text.toString()
+                    val surname = editTextSurname.text.toString()
+                    val subscriptionType = spinnerSubscription.selectedItem.toString()
+
+                    // Mostra le informazioni nel TextView
+                    val infoText = "Nome: $name\nCognome: $surname\nTipo Abbonamento: $subscriptionType"
+                    textView.text = infoText
+
+                    booleanArray[i] = !booleanArray[i]
+                    if (booleanArray[i]) {
+                        umbrella.text = "Libera"
+                        textView.visibility = View.VISIBLE
+                    } else {
+                        umbrella.text = "Occupa"
+                        textView.visibility = View.INVISIBLE
+                    }
+                }
+                .setNegativeButton("Annulla") { dialog, which ->
+                    // Non fare nulla in caso di annullamento
+                }
+                .show()
         }
     }
 

@@ -19,4 +19,10 @@
     <string name="menu_button">Menu button</string>
     <string name="taken">Occupa</string>
 
+    <string-array name="subscription_types">
+        <item>Giornaliero</item>
+        <item>Mensile</item>
+        <item>Stagionale</item>
+    </string-array>
+
 </resources>
