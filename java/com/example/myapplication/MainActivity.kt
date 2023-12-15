@@ -21,17 +21,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun checkPassword(view: View){
-        if (view is Button) {
-            val enteredUsername = findViewById<TextView>(R.id.TextUsername).text.toString()
-            val enteredPassword = findViewById<TextView>(R.id.TextPassword).text.toString()
+        if (view !is Button)
+            return
 
-            if (enteredUsername == correctUsername && enteredPassword == correctPassword) {
-                val intent = Intent(this, SelectionMenu::class.java)
-                startActivity(intent)
-            } else {
-                showToast("Credenziali non valide. Riprova!")
-            }
+        val enteredUsername = findViewById<TextView>(R.id.TextUsername).text.toString()
+        val enteredPassword = findViewById<TextView>(R.id.TextPassword).text.toString()
+
+        if (enteredUsername == correctUsername && enteredPassword == correctPassword) {
+            val intent = Intent(this, SelectionMenu::class.java)
+            startActivity(intent)
+        } else {
+            showToast("Credenziali non valide. Riprova!")
         }
+
     }
 
 }

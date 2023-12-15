@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 class Ombrelloni : AppCompatActivity() {
     private val numOmbrelli = 9
     private val booleanArray = BooleanArray(numOmbrelli)
-    private val testo = arrayOf<String>()
+    private val testo = Array<String>(numOmbrelli) { i -> "\n\n" }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,31 +26,34 @@ class Ombrelloni : AppCompatActivity() {
 
 
     fun processUmbrella(view: View) {
-        if (view is Button) {
-            val buttonId = view.id
-            val umbrella = findViewById<Button>(buttonId)
-            val buttonIdName = resources.getResourceEntryName(buttonId)
-            val i = Character.getNumericValue(buttonIdName[8].code) - 1
+        if (view !is Button)
+            return
 
-            val idText = resources.getIdentifier("textView"+(i+1), "id", packageName)
-            val textView = findViewById<TextView>(idText)
+        val buttonId = view.id
+        val umbrella = findViewById<Button>(buttonId)
+        val buttonIdName = resources.getResourceEntryName(buttonId)
+        val i = Character.getNumericValue(buttonIdName[8].code) - 1
 
-            val inflater = LayoutInflater.from(this)
-            val dialogView = inflater.inflate(R.layout.alert_dialog, null)
+        val idText = resources.getIdentifier("textView"+(i+1), "id", packageName)
+        val textView = findViewById<TextView>(idText)
 
-            val editTextName = dialogView.findViewById<EditText>(R.id.editTextName)
-            val editTextSurname = dialogView.findViewById<EditText>(R.id.editTextSurname)
-            val spinnerSubscription = dialogView.findViewById<Spinner>(R.id.spinnerSubscription)
+        val inflater = LayoutInflater.from(this)
+        val dialogView = inflater.inflate(R.layout.alert_dialog, null)
 
-            ArrayAdapter.createFromResource(
-                this,
-                R.array.subscription_types,
-                android.R.layout.simple_spinner_item
-            ).also { adapter ->
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spinnerSubscription.adapter = adapter
-            }
+        val editTextName = dialogView.findViewById<EditText>(R.id.editTextName)
+        val editTextSurname = dialogView.findViewById<EditText>(R.id.editTextSurname)
+        val spinnerSubscription = dialogView.findViewById<Spinner>(R.id.spinnerSubscription)
 
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.subscription_types,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinnerSubscription.adapter = adapter
+        }
+
+        if (!booleanArray[i]) {
             AlertDialog.Builder(this)
                 .setView(dialogView)
                 .setTitle("Inserisci i dettagli")
@@ -59,24 +62,24 @@ class Ombrelloni : AppCompatActivity() {
                     val surname = editTextSurname.text.toString()
                     val subscriptionType = spinnerSubscription.selectedItem.toString()
 
-                    // Mostra le informazioni nel TextView
-                    val infoText = "Nome: $name\nCognome: $surname\nTipo Abbonamento: $subscriptionType"
+                    val infoText = "$name\n$surname\n$subscriptionType"
+                    testo[i] = infoText
                     textView.text = infoText
-
+                    textView.visibility = View.VISIBLE
+                    umbrella.text = "Libera"
                     booleanArray[i] = !booleanArray[i]
-                    if (booleanArray[i]) {
-                        umbrella.text = "Libera"
-                        textView.visibility = View.VISIBLE
-                    } else {
-                        umbrella.text = "Occupa"
-                        textView.visibility = View.INVISIBLE
-                    }
+
                 }
                 .setNegativeButton("Annulla") { dialog, which ->
-                    // Non fare nulla in caso di annullamento
                 }
                 .show()
+
+        } else {
+            umbrella.text = "Occupa"
+            textView.visibility = View.INVISIBLE
+            testo[i] = "\n\n"
         }
+
     }
 
     fun indietro(view: View) {
@@ -90,9 +93,16 @@ class Ombrelloni : AppCompatActivity() {
         for (i in 0 until numOmbrelli) {
             booleanArray[i] = false
             editor.putBoolean(i.toString(), false)
+            editor.putString("textView"+(i+1), "")
+
             val id = resources.getIdentifier("umbrella" + (i + 1) + "Button", "id", packageName)
             val bottone = findViewById<Button>(id)
             bottone.text = "Occupa"
+
+            val idTextView = resources.getIdentifier("textView"+ (i + 1), "id", packageName)
+            val textView = findViewById<TextView>(idTextView)
+            textView.text = "\n\n"
+            textView.visibility = View.VISIBLE
         }
         editor.apply()
     }
@@ -100,8 +110,10 @@ class Ombrelloni : AppCompatActivity() {
     private fun save() {
         val prefs = getSharedPreferences("data", Context.MODE_PRIVATE)
         val editor = prefs.edit()
-        for (i in 0 until numOmbrelli)
+        for (i in 0 until numOmbrelli) {
             editor.putBoolean(i.toString(), booleanArray[i])
+            editor.putString("textView"+(i+1), testo[i])
+        }
         editor.apply()
 
     }
@@ -110,12 +122,21 @@ class Ombrelloni : AppCompatActivity() {
         val prefs = getSharedPreferences("data", Context.MODE_PRIVATE)
         for (i in 0 until numOmbrelli) {
             booleanArray[i] = prefs.getBoolean(i.toString(), false)
-            val id = resources.getIdentifier("umbrella" + (i + 1) + "Button", "id", packageName)
-            val bottone = findViewById<Button>(id)
-            if (booleanArray[i])
-                bottone.text = "Libera"
-            else
-                bottone.text = "Occupa"
+            testo[i] = prefs.getString("textView"+(i+1),"").toString()
+
+            if (!booleanArray[i])
+                continue
+
+            val idButton = resources.getIdentifier("umbrella" + (i + 1) + "Button", "id", packageName)
+            val bottone = findViewById<Button>(idButton)
+            bottone.text = "Libera"
+
+            val idTextView = resources.getIdentifier("textView"+ (i + 1), "id", packageName)
+            val textView = findViewById<TextView>(idTextView)
+            textView.text = testo[i]
+            textView.visibility = View.VISIBLE
+
+
         }
     }
 }
