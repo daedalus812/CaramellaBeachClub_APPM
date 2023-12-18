@@ -4,4 +4,236 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Negozio"/>
+    tools:context=".Negozio">
+
+    <ImageView
+        android:id="@+id/imageItem1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="245dp"
+        android:background="@drawable/border"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/borsa" />
+
+    <TextView
+        android:id="@+id/textItem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="45dp"
+        android:text="Borsa di stoffa"
+        app:layout_constraintStart_toEndOf="@+id/imageItem1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/shippingIcon1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/imageItem1"
+        app:layout_constraintTop_toBottomOf="@+id/textItem1"
+        app:srcCompat="@drawable/consegna" />
+
+    <TextView
+        android:id="@+id/shippingText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/shipping"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/shippingDays1"
+        app:layout_constraintStart_toEndOf="@+id/shippingIcon1"
+        app:layout_constraintTop_toBottomOf="@+id/textItem1" />
+
+    <TextView
+        android:id="@+id/shippingDays1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="2 - 3 giorni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shippingText1"
+        app:layout_constraintTop_toBottomOf="@+id/textItem1" />
+
+    <TextView
+        android:id="@+id/priceItem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="5,99€"
+        app:layout_constraintStart_toEndOf="@+id/imageItem1"
+        app:layout_constraintTop_toBottomOf="@+id/shippingText1" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:onClick="provide"
+        android:text="@string/provide"
+        app:layout_constraintStart_toEndOf="@+id/priceItem1"
+        app:layout_constraintTop_toBottomOf="@+id/shippingDays1" />
+
+    <ImageView
+        android:id="@+id/imageItem2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/border"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/imageItem3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageItem1"
+        app:srcCompat="@drawable/maglia" />
+
+    <TextView
+        android:id="@+id/textItem2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:text="Felpa con cappuccio Premium "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageItem2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <ImageView
+        android:id="@+id/shippingIcon2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/imageItem2"
+        app:layout_constraintTop_toBottomOf="@+id/textItem2"
+        app:srcCompat="@drawable/consegna" />
+
+    <TextView
+        android:id="@+id/shippingText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/shipping"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/shippingDays2"
+        app:layout_constraintStart_toEndOf="@+id/shippingIcon2"
+        app:layout_constraintTop_toBottomOf="@+id/textItem2" />
+
+    <TextView
+        android:id="@+id/shippingDays2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="2 - 3 giorni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shippingText2"
+        app:layout_constraintTop_toBottomOf="@+id/textItem2" />
+
+    <TextView
+        android:id="@+id/priceItem2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="30,00€"
+        app:layout_constraintStart_toEndOf="@+id/imageItem2"
+        app:layout_constraintTop_toBottomOf="@+id/shippingText2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="240dp"
+        android:onClick="provide"
+        android:text="@string/provide"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/imageItem2"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+    <ImageView
+        android:id="@+id/imageItem3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/tazza" />
+
+    <TextView
+        android:id="@+id/textItem3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="90dp"
+        android:text="Tazza"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageItem3" />
+
+    <ImageView
+        android:id="@+id/shippingIcon3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/shippingText3"
+        app:srcCompat="@drawable/consegna" />
+
+    <TextView
+        android:id="@+id/shippingText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/shipping"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/priceItem3"
+        app:layout_constraintEnd_toStartOf="@+id/shippingDays3" />
+
+    <TextView
+        android:id="@+id/shippingDays3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="60dp"
+        android:text="4 - 5 giorni"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/priceItem3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="30dp"
+        android:text="7,00€"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="provide"
+        android:text="@string/provide"
+        app:layout_constraintBottom_toTopOf="@+id/shippingDays3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
