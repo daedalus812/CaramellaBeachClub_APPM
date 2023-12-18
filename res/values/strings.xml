@@ -17,6 +17,8 @@
     <string name="umbrella_button">Umbrella button</string>
     <string name="menu_button">Menu button</string>
     <string name="taken">Occupa</string>
+    <string name="shipping">Consegna:</string>
+    <string name="provide">Fornisci</string>
 
     <string-array name="subscription_types">
         <item>Giornaliero</item>

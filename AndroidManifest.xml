@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".menu"
+            android:name=".Menu"
             android:exported="false"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.MyApplication" />
@@ -28,7 +28,7 @@
         </activity>
 
         <activity android:name=".SelectionMenu" />
-        <activity android:name=".Menu" />
+
         <activity android:name=".Ombrelloni" />
         <activity android:name=".Negozio" />
     </application>
