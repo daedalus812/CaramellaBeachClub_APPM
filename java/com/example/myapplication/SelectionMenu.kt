@@ -8,7 +8,7 @@ import android.widget.ImageButton
 class SelectionMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activity_selection_menu)
         val menu = findViewById<ImageButton>(R.id.menuButton)
         val umbrella = findViewById<ImageButton>(R.id.umbrellaButton)
         val shop = findViewById<ImageButton>(R.id.shopButton)
