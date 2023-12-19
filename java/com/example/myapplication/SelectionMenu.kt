@@ -1,23 +1,17 @@
 package com.example.myapplication
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.VideoView
-
 
 class SelectionMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_selection_menu) // Muovi questa chiamata qui
+        setContentView(R.layout.activity_selection_menu)
 
-        // Assicurati di usare l'ID corretto
         val backgroundImageView: ImageView = findViewById(R.id.backgroundImageView)
-
-        // Verifica se l'oggetto non è nullo prima di chiamare il metodo setImageResource
 
         backgroundImageView.setImageResource(R.drawable.background_image)
 

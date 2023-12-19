@@ -10,17 +10,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class Menu : AppCompatActivity(), MenuAdapter.OnMenuItemClickListener {
-    private lateinit var recyclerView: RecyclerView  // Dichiarazione di recyclerView
-    data class MenuItem(val name: String, val price: String, var isAvailable: Boolean = true)
+    private lateinit var recyclerView: RecyclerView
+    data class MenuItem(val name: String, val price: String, var isAvailable: Boolean = true, val isHeader: Boolean = false)
+
     private val menuItems = listOf(
-        MenuItem("Antipasto 1", "€10.00"),
-        MenuItem("Antipasto 2", "€12.00"),
-        MenuItem("Primo Piatto 1", "€8.00"),
-        MenuItem("Primo Piatto 2", "€9.00"),
-        MenuItem("Secondo Piatto 1", "€15.00"),
-        MenuItem("Secondo Piatto 2", "€18.00"),
-        MenuItem("Bevanda 1", "€5.00"),
-        MenuItem("Bevanda 2", "€3.00")
+        MenuItem("Antipasti", "", isHeader = true),
+        MenuItem("Antipasto dello Ionio", "€12.00"),
+        MenuItem("Fresco di Mare", "€9.00"),
+        MenuItem("Primi Piatti", "", isHeader = true),
+        MenuItem("Spaghetti Cozze e Vongole", "€13.00"),
+        MenuItem("Spaghetti agli Scampi", "€16.00"),
+        MenuItem("Secondi Piatti", "", isHeader = true),
+        MenuItem("Trancio di Tonno Scottato", "€12.00"),
+        MenuItem("Spada alla Griglia", "€18.00"),
+        MenuItem("Bevande", "", isHeader = true),
+        MenuItem("Heineken", "€2.00"),
+        MenuItem("Corona", "€3.00"),
+        MenuItem("Peroni", "€2.00"),
+        MenuItem("Acqua 1LT Naturale", "€2.00"),
+        MenuItem("Acqua 0.5LT Naturale", "€1.00"),
+        MenuItem("Acqua 1LT Frizzante", "€2.00"),
+        MenuItem("Acqua 0.5LT Frizzante", "€1.00")
     )
 
 
@@ -45,7 +55,6 @@ class Menu : AppCompatActivity(), MenuAdapter.OnMenuItemClickListener {
 
 
         for (menuItem in menuItems) {
-            // Carica lo stato della disponibilità dalle SharedPreferences
             loadAvailabilityState(menuItem)
         }
 
@@ -57,36 +66,27 @@ class Menu : AppCompatActivity(), MenuAdapter.OnMenuItemClickListener {
         finish()
     }
 
-
-
     override fun onMenuItemClick(position: Int, menuItem: MenuItem) {
-        // Costruisci l'AlertDialog
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Scegli disponibilità")
 
         val options = arrayOf("Disponibile", "Non disponibile")
 
         alertDialogBuilder.setItems(options) { _, which ->
-            // Aggiorna lo stato del piatto solo dopo la scelta nell'AlertDialog
+
             menuItem.isAvailable = which == 0
 
-            // Salva lo stato della disponibilità nelle SharedPreferences
             saveAvailabilityState(menuItem)
 
-            // Notifica all'Adapter che i dati sono stati modificati
             recyclerView.adapter?.notifyItemChanged(position)
         }
 
-        // Crea e mostra l'AlertDialog
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
-    // Aggiungi questa funzione nella tua classe Menu
     private fun loadAvailabilityState(menuItem: MenuItem) {
         val sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
         menuItem.isAvailable = sharedPreferences.getBoolean(menuItem.name, true)
     }
-
-
 
 }
