@@ -19,6 +19,7 @@
     <string name="taken">Occupa</string>
     <string name="shipping">Consegna:</string>
     <string name="provide">Fornisci</string>
+    <string name="background_video">background video</string>
 
     <string-array name="subscription_types">
         <item>Giornaliero</item>
