@@ -15,13 +15,7 @@ class Negozio : AppCompatActivity() {
     fun provide(view: View){
         if (view !is Button)
             return
-
-        val buttonId = view.id
-
-        val buttonIdName = resources.getResourceEntryName(buttonId)
-        val numero = Character.getNumericValue(buttonIdName[6].code)
-
-        Toast.makeText(this, "Fornito Oggetto $numero", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Richiesta di Fornitura Inviata", Toast.LENGTH_SHORT).show()
 
 
     }
