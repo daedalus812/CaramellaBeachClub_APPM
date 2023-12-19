@@ -16,7 +16,5 @@ class Negozio : AppCompatActivity() {
         if (view !is Button)
             return
         Toast.makeText(this, "Richiesta di Fornitura Inviata", Toast.LENGTH_SHORT).show()
-
-
     }
 }

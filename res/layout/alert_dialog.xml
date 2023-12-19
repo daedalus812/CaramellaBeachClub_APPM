@@ -9,13 +9,13 @@
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"/>
+        android:hint="@string/name"/>
 
     <EditText
         android:id="@+id/editTextSurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cognome"/>
+        android:hint="@string/surname"/>
 
     <Spinner
         android:id="@+id/spinnerSubscription"
