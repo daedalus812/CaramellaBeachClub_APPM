@@ -15,9 +15,9 @@ Caramella Beach Club Manager è un'applicazione progettata per facilitare la ges
 
 ## Screenshots
 <p float="left">
-  <img src="https://github.com/DomHeadroom/AppmProject/assets/50798132/4cfce957-625d-4e3c-b350-c7cc43170e11" width="33%" />
-  <img src="https://github.com/DomHeadroom/AppmProject/assets/50798132/2c2d257e-dcce-4a0c-b346-c6f46052b50d" width="33%" />
-  <img src="https://github.com/DomHeadroom/AppmProject/assets/50798132/d0510c92-e1bc-4250-a47c-07c7bfc44630" width="33%" />
+  <img src="https://github.com/DomHeadroom/AppmProject/assets/50798132/4cfce957-625d-4e3c-b350-c7cc43170e11" width="25%" />
+  <img src="https://github.com/DomHeadroom/AppmProject/assets/50798132/2c2d257e-dcce-4a0c-b346-c6f46052b50d" width="25%" />
+  <img src="https://github.com/DomHeadroom/AppmProject/assets/50798132/d0510c92-e1bc-4250-a47c-07c7bfc44630" width="25%" />
 </p>
 
 
