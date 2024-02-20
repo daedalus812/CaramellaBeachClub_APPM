@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import DBHelperOmbrelloni
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class Ombrelloni : AppCompatActivity() {
+    private lateinit var dbHelper: DBHelperOmbrelloni
     private val numOmbrelli = 9
     private val booleanArray = BooleanArray(numOmbrelli)
     private val testo = Array<String>(numOmbrelli) { i -> "\n\n" }
@@ -20,9 +22,10 @@ class Ombrelloni : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_umbrella)
+        dbHelper = DBHelperOmbrelloni(this)
         load()
+        addExampleOmbrelloni()
     }
-
 
     fun processUmbrella(view: View) {
         if (view !is Button)
@@ -67,7 +70,7 @@ class Ombrelloni : AppCompatActivity() {
                     textView.visibility = View.VISIBLE
                     umbrella.text = "Libera"
                     booleanArray[i] = !booleanArray[i]
-
+                    dbHelper.addOrUpdateOmbrellone(i, true, infoText)
                 }
                 .setNegativeButton("Annulla") { dialog, which ->
                 }
@@ -77,6 +80,7 @@ class Ombrelloni : AppCompatActivity() {
             umbrella.text = "Occupa"
             textView.visibility = View.INVISIBLE
             testo[i] = "\n\n"
+            dbHelper.addOrUpdateOmbrellone(i, false, "")
         }
 
     }
@@ -102,6 +106,8 @@ class Ombrelloni : AppCompatActivity() {
             val textView = findViewById<TextView>(idTextView)
             textView.text = "\n\n"
             textView.visibility = View.VISIBLE
+
+            dbHelper.addOrUpdateOmbrellone(i, false, "")
         }
         editor.apply()
     }
@@ -112,6 +118,7 @@ class Ombrelloni : AppCompatActivity() {
         for (i in 0 until numOmbrelli) {
             editor.putBoolean(i.toString(), booleanArray[i])
             editor.putString("textView"+(i+1), testo[i])
+            dbHelper.addOrUpdateOmbrellone(i, booleanArray[i], testo[i])
         }
         editor.apply()
 
@@ -135,7 +142,17 @@ class Ombrelloni : AppCompatActivity() {
             textView.text = testo[i]
             textView.visibility = View.VISIBLE
 
+            dbHelper.addOrUpdateOmbrellone(i, true, testo[i])
+        }
+    }
 
+    private fun addExampleOmbrelloni() {
+        for (i in 0 until numOmbrelli) {
+            val isOccupied = i % 2 == 0 // Occupa ogni secondo ombrellone di esempio
+            val info = if (isOccupied) "Esempio Occupato" else "" // Informazioni di esempio
+            dbHelper.addOrUpdateOmbrellone(i, isOccupied, info)
+            booleanArray[i] = isOccupied
+            testo[i] = info
         }
     }
 }

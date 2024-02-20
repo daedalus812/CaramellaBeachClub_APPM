@@ -20,7 +20,7 @@
         android:backgroundTint="#FDF9FC"
         android:onClick="svuota"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/umbrella3"
+        app:layout_constraintBottom_toTopOf="@id/umbrella3Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/umbrella3"
