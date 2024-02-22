@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inserimento delle credenziali di esempio
+        // Credenziali di esempio
         val dbHelper = DBHelper(this)
         dbHelper.inserisciUtente("Admin", "Test")
         vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator

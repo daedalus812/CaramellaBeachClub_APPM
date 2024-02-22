@@ -149,7 +149,7 @@ class Ombrelloni : AppCompatActivity() {
     private fun addExampleOmbrelloni() {
         for (i in 0 until numOmbrelli) {
             val isOccupied = i % 2 == 0 // Occupa ogni secondo ombrellone di esempio
-            val info = if (isOccupied) "Esempio Occupato" else "" // Informazioni di esempio
+            val info = if (isOccupied) "Esempio Occupato" else ""
             dbHelper.addOrUpdateOmbrellone(i, isOccupied, info)
             booleanArray[i] = isOccupied
             testo[i] = info

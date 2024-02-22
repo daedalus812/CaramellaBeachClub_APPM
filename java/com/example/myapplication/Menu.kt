@@ -47,10 +47,10 @@ class Menu : AppCompatActivity(), MenuAdapter.OnMenuItemClickListener {
         val editTextProductName = dialogView.findViewById<EditText>(R.id.editTextProductName)
         val editTextProductPrice = dialogView.findViewById<EditText>(R.id.editTextProductPrice)
 
-        // Elenco degli header
+
         val headers = arrayOf("Antipasti", "Primi Piatti", "Secondi Piatti", "Bevande")
 
-        // Adapter Spinner
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, headers)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerHeader.adapter = adapter

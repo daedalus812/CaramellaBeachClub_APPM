@@ -10,12 +10,12 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 
 class Negozio : AppCompatActivity() {
-    private lateinit var vibrator: Vibrator // Dichiarazione del vibratore
+    private lateinit var vibrator: Vibrator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop)
-        vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator // Inizializzazione del vibratore
+        vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
     }
 
     fun provide(view: View){
