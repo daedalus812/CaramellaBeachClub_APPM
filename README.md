@@ -1,17 +1,17 @@
-## Autori
+## Authors
 
 - [Domenico Femia 236916](https://github.com/DomHeadroom)
 - [Lorenzo Fanelli 234339](https://github.com/lorenzofanelli)
 
 # Caramella Beach Club Manager
 
-Caramella Beach Club Manager è un'applicazione progettata per facilitare la gestione dello stabilimento balneare Caramella Beach Club. Questa applicazione aiuta a gestire gli ombrelloni occupati, gli abbonamenti dei clienti, il menu delle pietanze servite e fornisce accesso al merchandising brandizzato del Caramella Beach Club.
+Caramella Beach Club Manager is an application designed to facilitate the management of the Caramella Beach Club establishment. This application helps manage occupied beach umbrellas, customer subscriptions, the menu of dishes served, and provides access to branded merchandise from the Caramella Beach Club.
 
-## Funzionalità Principali
+## Key Features
 
-- **Gestione degli Ombrelloni**: Monitora gli ombrelloni del Caramella Beach Club, indicando quali sono occupati, da chi e che abbonamento possiede l'occupante.
-- **Menu delle Pietanze**: Visualizza il menu delle pietanze servite presso il Caramella Beach Club, indicando la disponibilità dei piatti.
-- **Merchandising Brandizzato**: Fornisce accesso al merchandising brandizzato del Caramella Beach Club, consentendo al gestore di fornire quel determinato prodotto.
+- **Umbrella Management**: Monitors the umbrellas at Caramella Beach Club, indicating which ones are occupied, by whom, and what subscription the occupant has.
+- **Menu of Dishes**: Displays the menu of dishes served at Caramella Beach Club, indicating the availability of dishes.
+- **Branded Merchandise**: Provides access to branded merchandise from Caramella Beach Club, allowing the manager to supply that particular product.
 
 ## Screenshots
 <p float="left">
