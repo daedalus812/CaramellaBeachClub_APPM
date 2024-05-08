@@ -1,7 +1,7 @@
 ## Authors
 
-- [Domenico Femia 236916](https://github.com/DomHeadroom)
-- [Lorenzo Fanelli 234339](https://github.com/lorenzofanelli)
+- [DomHeadroom](https://github.com/DomHeadroom)
+- [Daedalus](https://github.com/daedalus812)
 
 # Caramella Beach Club Manager
 
